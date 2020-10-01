@@ -1,0 +1,73 @@
+.tp-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+ }
+
+ .buy{
+    background-color: orange;
+ }
+
+ .sell{
+    background-color:  lightskyblue;
+ }
+
+ .container {
+   display: flex;
+ }
+ 
+ .fill {
+   flex: 1;
+ }
+
+ .alert-danger {
+   background-color: #f44336; /* Red */
+}
+.alert-success {
+   background-color: #36f456;  
+} 
+.alert{
+   padding: 10px;
+   color: black;
+   margin-bottom: 5px;
+   text-align: left;
+}
+
+.background{
+  width: 100%;  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.cardhead{
+   background: #45aece;
+   padding: 20px 55px 20px 55px; 
+}
+
+.cardcontent{
+   background :rgba(235, 226, 226, 0.822);
+   padding: 20px 55px 20px 55px; 
+}
+
+.cardheadsell{
+   background:#ee96ae;
+   padding: 20px 55px 20px 55px; 
+}
+
+.cardcontentsell{
+   background:#c6d7eb;
+   padding: 20px 55px 20px 55px; 
+}
+
+#HASH {
+   display: flex;
+   justify-content: space-between;
+ }
+/*new css*/
+.field__input{ 
+   font-size:14pt;
+ }
+
+ b{
+   font-size: large;
+ }
