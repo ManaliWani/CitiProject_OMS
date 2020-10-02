@@ -1,9 +1,9 @@
-<div style="margin-top: 30px;margin-left: 1080px;">
+<div style="margin-top: 20px;margin-left: 1080px;">
     <button mat-raised-button  color="success" class="button-row" (click)="exportAsXLSX()"><mat-icon>get_app</mat-icon>
     Export Trades</button>
 </div>
-<h3 style="margin-left: 150px;font-family: Arial, Helvetica, sans-serif;color:navy;"> Matched Orders</h3>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+<h3 style="margin-left: 150px;font-family: Arial, Helvetica, sans-serif;color:rgb(0, 41, 95); font-style: italic;"> Matched Orders</h3>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort style="margin-top: 0%;">
 
     <!--<ng-container matColumnDef="tradeId">
       <th mat-header-cell *matHeaderCellDef >Trade ID</th>
@@ -11,27 +11,27 @@
     </ng-container>-->
 
     <ng-container matColumnDef="tradeTime">
-        <th mat-header-cell *matHeaderCellDef >Trade Time</th>
+        <th mat-header-cell *matHeaderCellDef >TRADE TIME</th>
         <td mat-cell *matCellDef="let row">{{row.tradeTime}}</td>
     </ng-container>
 
     <ng-container matColumnDef="quantity">
-        <th mat-header-cell *matHeaderCellDef >Quantity</th>
+        <th mat-header-cell *matHeaderCellDef >QUANTITY</th>
         <td mat-cell *matCellDef="let row">{{row.quantity}}</td>
     </ng-container>
     
     <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef >Price</th>
+        <th mat-header-cell *matHeaderCellDef >PRICE</th>
         <td mat-cell *matCellDef="let row">{{row.price}}</td>
     </ng-container>
 
     <ng-container matColumnDef="buyId">
-        <th mat-header-cell *matHeaderCellDef >Buy ID</th>
+        <th mat-header-cell *matHeaderCellDef >BUY ID</th>
         <td mat-cell *matCellDef="let row">{{row.buyId}}</td>
     </ng-container>
 
     <ng-container matColumnDef="sellId">
-        <th mat-header-cell *matHeaderCellDef >Sell ID</th>
+        <th mat-header-cell *matHeaderCellDef >SELL ID</th>
         <td mat-cell *matCellDef="let row">{{row.sellId}}</td>
     </ng-container>
 

@@ -22,8 +22,8 @@ import com.citi.json.RandomInt;
 @Table(name ="orders")
 public class Order {
 	@Id
-	//@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@SequenceGenerator(name = "order_id",initialValue=1,allocationSize=1)
 	@Column(name="order_id",updatable=false,nullable=false/*,columnDefinition="int default '1'"*/)
 	private Long id;

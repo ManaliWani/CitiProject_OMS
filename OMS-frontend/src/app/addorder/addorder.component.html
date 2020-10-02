@@ -1,8 +1,8 @@
 
 <!-- INSTRUCTIONS -->
 
-<div style="width : 450px; float:right; margin-top: 30pt; margin-right: 30pt;">
-  <mat-card class="my-card" style="background-color:  #fff1e1;">
+<div style="width : 550px; float:right; margin-top: 30pt; margin-right: 30pt; font-size:medium;">
+  <mat-card class="mat-elevation" style="background-color: whitesmoke; border-radius: 0%; box-shadow: none;">
     <h2>Everything you need to know before stepping into the market</h2>
     <p>
       <b>LTP : </b>
@@ -48,16 +48,16 @@
 
 <!-- BUY FORM -->
 
-<div *ngIf = "!slidervalue" style="width : 800px; margin-left: 10pt; margin-top: 30pt;">
+<div *ngIf = "!slidervalue" style="width : 600px; margin-left: 60pt; margin-top: 15pt">
     <mat-card class="my-card" style="margin-top: 30pt;">
 
       <!-- FORM HEADER-->
       <div class = "cardhead">
         <div id="HASH">
-          <span><h3 style="color:rgba(5, 0, 0, 0.822)">BUY ORDER</h3></span>
+          <span><h4 style="color: white;  font-family: Verdana, Geneva, Tahoma, sans-serif;">BUY ORDER</h4></span>
           <span>
-            <h3 style="color: rgba(5, 0, 0, 0.822);"><fa-icon [icon]="ltpinfo" data-toggle="tooltip" title="Last Traded Price. Your bid should be in the LTP price band."></fa-icon>
-            LTP : {{ltp}}</h3></span>
+            <h4 style="color:white; font-family: Verdana, Geneva, Tahoma, sans-serif;"><fa-icon [icon]="ltpinfo" data-toggle="tooltip" title="Last Traded Price. Your bid should be in the LTP price band."></fa-icon>
+            LTP : {{ltp}}</h4></span>
         </div>
       </div>
       <!-- FORM HEADER-->
@@ -72,8 +72,8 @@
                         <input pattern="^\d*(\.\d{0,2})?$" [disabled] = "pbuy" matInput  placeholder="Price" [(ngModel)]="order.price"  name="price"  required #priceref = "ngModel">      
                       </mat-form-field>  
                       <fa-icon [icon]="priceinfo" data-toggle="tooltip" title="Should be a multiple of 0.05 and within the 10% LTP price band."></fa-icon>
-                      <span style="padding-left: 10px; padding-right: 10px;">Min : {{minlimit}}</span>
-                      <span>Max : {{maxlimit}}</span>
+                      <span style="padding-left: 10px; padding-right: 10px; color: gray"><br>Min : {{minlimit}}</span>
+                      <span style="color: gray">Max : {{maxlimit}}</span>
                       <div [hidden]="(priceref.pristine || priceref.valid || pbuy)" class="alert alert-danger">
                         Please enter a Valid Price for your order!
                       </div>
@@ -165,15 +165,15 @@
 
 <!-- SELL FORM -->
 
-  <div *ngIf = "slidervalue" style="width : 800px; margin-left: 10pt; margin-top: 30pt;">
+  <div *ngIf = "slidervalue" style="width : 600px; margin-left: 60pt; margin-top: 15pt;">
     <mat-card  class="my-card" style="margin-top: 30pt;">
       
       <div class = "cardheadsell">
         <div id="HASH">
-          <span><h1 style="color:#417bbd;">SELL ORDER</h1></span>
+          <span><h4 style="color: white;  font-family: Verdana, Geneva, Tahoma, sans-serif;">SELL ORDER</h4></span>
           <span>
-            <h2 style="color: #417bbd;"><fa-icon [icon]="ltpinfo" data-toggle="tooltip" title="Last Traded Price. Your bid should be in the LTP price band."></fa-icon>
-            LTP : {{ltp}}</h2></span>
+            <h4 style="color: white;  font-family: Verdana, Geneva, Tahoma, sans-serif;"><fa-icon [icon]="ltpinfo" data-toggle="tooltip" title="Last Traded Price. Your bid should be in the LTP price band."></fa-icon>
+            LTP : {{ltp}}</h4></span>
         </div>
       </div>
           <mat-card-content class="cardcontentsell">
@@ -185,8 +185,8 @@
                         <input pattern="^\d*(\.\d{0,2})?$" [disabled] = "psell" matInput  placeholder="Price" [(ngModel)]="order.price"  name="price"  required #priceref = "ngModel"> 
                       </mat-form-field>
                       <fa-icon [icon]="priceinfo" data-toggle="tooltip" title="Should be a multiple of 0.05 and within the 10% LTP price band."></fa-icon>
-                      <span style="padding-left: 10px; padding-right: 10px;">Min : {{minlimit}}</span>
-                      <span>Max : {{maxlimit}}</span>
+                      <span style="padding-left: 10px; padding-right: 10px; color: gray">Min : {{minlimit}}</span>
+                      <span style="color: gray">Max : {{maxlimit}}</span>
                       <div [hidden]="(priceref.pristine || priceref.valid || psell)" class="alert alert-danger">
                         Please enter a Valid Price for your order!
                       </div>

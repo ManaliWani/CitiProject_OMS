@@ -95,4 +95,12 @@ export class TableComponent implements AfterViewInit, OnInit {
     console.log("Value of click message : "+this.clickMessage);
   }
 
+  onReset() {
+    console.log("Reset clicked");  
+    this.httpClient.get('http://localhost:8080/reset').subscribe();
+    window.location.reload();
+    window.location.reload();
+    window.location.reload();
+  }
+
 }

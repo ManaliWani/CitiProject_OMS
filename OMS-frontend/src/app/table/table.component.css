@@ -4,10 +4,19 @@ table {
   margin-left: auto;
   margin-right: auto;
 }
+
   
 .mat-paginator {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    background:whitesmoke;
+    font-size: 15px;
+    font-weight: 900px;
 }
 
 .button-row {
@@ -15,6 +24,7 @@ table {
   justify-self: left;
   width: 450px;
   margin-left : 150px;
+  margin-top: 15px;;
 }
 
 .button-row .mat-button-base {
@@ -31,4 +41,12 @@ table {
 
 .executed{
   color : green;
+}
+
+.mat-header-cell{
+  font-family: monospace;
+    font-size: large;
+  font-weight: bold;
+  color: whitesmoke;  
+  background:rgb(0, 41, 95);
 }
