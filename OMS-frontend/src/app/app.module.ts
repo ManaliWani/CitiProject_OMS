@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MyMaterialModule } from  './material.module';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { TradesComponent } from './trades/trades.component';
@@ -76,7 +78,8 @@ import { NewTableComponent } from './new-table/new-table.component';
     MatSortModule,
     MatPaginatorModule,
     MyMaterialModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

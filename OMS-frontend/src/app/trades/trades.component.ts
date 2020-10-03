@@ -6,7 +6,7 @@ import { TradeDataSource, TradeItem, EXAMPLE_DATA } from './trades-datasource';
 import { MatTableDataSource} from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 import { ExcelService } from '../service/excel.service';
-import { delay } from 'rxjs/operators';
+
 
 export interface Idata {
   tradeId: number;
@@ -36,10 +36,11 @@ export class TradesComponent implements AfterViewInit, OnInit {
   dataSource = new MatTableDataSource<TradeItem>();
 
   constructor(
-    private httpClient: HttpClient, private excelService : ExcelService
+    private httpClient: HttpClient, private excelService : ExcelService,
+    
   ) { }
   ngAfterViewInit(): void {
-   // this.table.dataSource = this.dataSource;
+  // this.table.dataSource = this.dataSource;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
@@ -53,6 +54,10 @@ export class TradesComponent implements AfterViewInit, OnInit {
       this.dataSource.data = data;
       console.log(data)
     });
+    if(this.dataSource?.data.length === 0){
+      console.log(this.dataSource?.data.length);
+    }
+    
     /*if(this.flag===0)
     {
       delay(2000);

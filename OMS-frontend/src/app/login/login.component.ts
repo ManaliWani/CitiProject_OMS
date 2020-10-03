@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
   emailId:string;
   username: string;
   password:string;
+  usernameSignup: string;
+  passwordSignup:string;
   status:string;
   flag:boolean = false;
 
@@ -88,8 +90,7 @@ export class LoginComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
           console.log('The dialog was closed');
         });
-        this.username="";
-        this.password="";
+        window.location.reload();
       }
     
     });
@@ -125,8 +126,8 @@ export class LoginComponent implements OnInit {
   }*/
 
   createUser(){
-    this.user.username = this.username;
-    this.user.pass_word = this.password;
+    this.user.username = this.usernameSignup;
+    this.user.pass_word = this.passwordSignup;
     this.user.email_id = this.emailId;
     console.log(this.user);
     this.authentication.createUser(this.user).subscribe(res => {
@@ -139,9 +140,7 @@ export class LoginComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
           console.log('The dialog was closed');
         });
-        this.username="";
-        this.password="";
-        this.emailId="";
+        window.location.reload();
       }
     });
 

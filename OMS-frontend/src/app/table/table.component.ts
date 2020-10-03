@@ -7,7 +7,7 @@ import { MatTableDataSource} from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 import {TradeItem} from '../trades/trades-datasource';
 import { Router } from '@angular/router';
-import { delay } from 'rxjs/operators';
+import { NgxSpinnerService } from "ngx-spinner";
 import {faExclamationTriangle, faCheckCircle, faSpinner, faCog} from '@fortawesome/free-solid-svg-icons';
 
 export interface Idata {
@@ -46,11 +46,13 @@ export class TableComponent implements AfterViewInit, OnInit {
   fapending = faCog;
 
     constructor(
-      private httpClient: HttpClient, private router : Router
+      private httpClient: HttpClient, private router : Router,
+      private spinner: NgxSpinnerService
     ) { }
 
   ngOnInit() {
     // this.dataSource = new TableDataSource();
+    this.spinner.hide();
     this.httpClient.get('http://localhost:8080/order')
         .subscribe((data: Idata[]) => {
           this.dataSource.data = data;
@@ -87,11 +89,17 @@ export class TableComponent implements AfterViewInit, OnInit {
   {
     this.clickMessage = true;
     console.log("Transact clicked .. ");
+    this.spinner.show();
+
     this.httpClient.get('http://localhost:8080/match')
     .subscribe((data: TradeItem[])=>{
       console.log(data)
     });
-    this.router.navigate(['trades']);
+    
+    setTimeout(() => {
+      this.router.navigate(['trades']);
+  }, 10000);  
+    //this.router.navigate(['trades']);
     console.log("Value of click message : "+this.clickMessage);
   }
 

@@ -65,15 +65,16 @@
                       
                         <mat-form-field>
                          <!-- <input matInput placeholder="Enter your UserName" [formControl]="userNameSignUp" required>-->
-                          <input matInput placeholder="Enter Username" required [(ngModel)]="username" #userref = "ngModel">
+                          <input matInput placeholder="Enter Username" required [(ngModel)]="usernameSignup" #userref = "ngModel">
                         </mat-form-field>
                           <mat-form-field>
                            <!-- <input matInput placeholder="Enter your Email" [formControl]="emailSignUp" required>-->
                             <input matInput pattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9.-]+$" placeholder="Enter Email ID" required [(ngModel)]="emailId" #mailref = "ngModel">
+
                           </mat-form-field>
                         <mat-form-field>
                           <!--<input matInput placeholder="Enter your Passsword" [formControl]="passwordSignUp" required>-->
-                          <input matInput type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Passsword" required [(ngModel)]="password" #passref = "ngModel">
+                          <input matInput type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Passsword" required [(ngModel)]="passwordSignup" #passref = "ngModel">
                         </mat-form-field><br><br>
                         <button mat-raised-button color="primary"  [disabled] = "(!(passref.valid && userref.valid && mailref.valid))" (click) = "createUser()" > SIGNUP </button>
                         
