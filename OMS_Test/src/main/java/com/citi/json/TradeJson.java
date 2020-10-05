@@ -7,7 +7,7 @@ public class TradeJson {
 	private Long tradeId;
 	private Date tradeTime;
 	private Long quantity;
-	private Long price;
+	private Double price;
 	private Long buyId;
 	private Long sellId;
 	
@@ -33,7 +33,7 @@ public class TradeJson {
 		return tradeId;
 	}
 	
-	public TradeJson(long trade_Id,Date tradeTime, Long quantity, Long price, Long buyId, Long sellId) {
+	public TradeJson(long trade_Id,Date tradeTime, Long quantity, Double price, Long buyId, Long sellId) {
 		super();
 		this.tradeId = trade_Id;
 		this.tradeTime = tradeTime;
@@ -57,10 +57,10 @@ public class TradeJson {
 	public void setQuantity(Long quantity) {
 		this.quantity = quantity;
 	}
-	public Long getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(Long price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	

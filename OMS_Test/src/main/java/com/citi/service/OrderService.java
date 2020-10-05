@@ -12,5 +12,7 @@ public interface OrderService {
 	OrderJson sendOrder(Order order);
 	
 	void clearTable();
+	
+	 void truncateMyTable();
 
 }

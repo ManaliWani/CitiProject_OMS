@@ -2,6 +2,8 @@ package com.citi.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +38,10 @@ public class TradeServiceImpl implements TradeService{
 		
 		for(TradeJson t:trades) {
 			Trade trade = TradeUtil.convertTradeJsonIntoTrade(t);
+			logger1.info(t.toString());
 			logger1.info(trade.toString());
 			Trade tr=tradeRepository.save(trade);
-			logger1.info(tr);
+			//logger1.info(tr);
 		}
 		
 		
@@ -56,6 +59,11 @@ public class TradeServiceImpl implements TradeService{
 		tradeRepository.deleteAll();
 		
 	}
+	 @Override
+	 @Transactional
+	 public void truncateMyTable() {
+	        tradeRepository.truncateMyTable();
+	    }
 	
 
 }

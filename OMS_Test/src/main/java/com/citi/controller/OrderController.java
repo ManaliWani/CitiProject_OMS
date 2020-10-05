@@ -30,8 +30,9 @@ import com.citi.service.OrderService;
 import com.citi.service.TradeService;
 import com.citi.service.UpdatedOrderService;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+@RequestMapping("/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class OrderController {
 	
 	@Autowired
@@ -97,9 +98,12 @@ public class OrderController {
 	
 	@GetMapping(value="/reset")
 	public void reset(){
-		orderService.clearTable();
-		updatedOService.clearTable();
-		tradeService.clearTable();
+		//orderService.clearTable();
+		orderService.truncateMyTable();
+		//updatedOService.clearTable();
+		updatedOService.truncateMyTable();
+		//tradeService.clearTable();
+		tradeService.truncateMyTable();
 		logger.info("table cleaned");
 	}
 

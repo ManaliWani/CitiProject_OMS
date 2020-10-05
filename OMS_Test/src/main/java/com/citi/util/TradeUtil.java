@@ -3,7 +3,6 @@ package com.citi.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.citi.json.OrderJson;
 import com.citi.json.TradeJson;
 import com.citi.model.Trade;
 

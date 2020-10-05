@@ -14,7 +14,7 @@ public class OrderJson implements Comparable<OrderJson>{
 	private Date orderTime;
 	private Long quantity;
 	private String orderType;
-	private Long price;
+	private Double price;
 	private String orderStatus;
 	private Long allorNone;
 	private Long minFill;
@@ -25,7 +25,7 @@ public class OrderJson implements Comparable<OrderJson>{
 		super();
 	}
 
-	public OrderJson(Long id, String buyOrSell, Date orderTime, Long quantity, String orderType, Long price,
+	public OrderJson(Long id, String buyOrSell, Date orderTime, Long quantity, String orderType, Double price,
 			String orderStatus, Long allorNone, Long minFill) {
 		this.id = id;
 		this.buyOrSell = buyOrSell;
@@ -78,11 +78,11 @@ public class OrderJson implements Comparable<OrderJson>{
 		this.orderType = orderType;
 	}
 
-	public Long getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(Long price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 

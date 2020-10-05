@@ -12,4 +12,6 @@ public interface UpdatedOrderService {
 	List<OrderJson> getAllOrders();
 
 	void clearTable();
+
+	void truncateMyTable();
 }

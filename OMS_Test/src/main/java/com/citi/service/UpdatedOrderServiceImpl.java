@@ -2,6 +2,8 @@ package com.citi.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +47,13 @@ public class UpdatedOrderServiceImpl implements UpdatedOrderService{
 		updatedorderRepository.deleteAll();
 		
 	}
+
+
+	 @Override
+	 @Transactional
+	 public void truncateMyTable() {
+	        updatedorderRepository.truncateMyTable();
+	    }
 	
 	
 }

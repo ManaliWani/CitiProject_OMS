@@ -28,7 +28,7 @@ public class Trade {
 	private Long quantity;
 	
 	@Column(name="price")
-	private Long price;
+	private Double price;
 	
 	@Column(name="buy_id")
 	private Long buyId;
@@ -58,7 +58,7 @@ public class Trade {
 		return tradeId;
 	}
 	
-	public Trade(Date tradeTime, Long quantity, Long price, Long buyId, Long sellId) {
+	public Trade(Date tradeTime, Long quantity, Double price, Long buyId, Long sellId) {
 		super();
 		this.tradeTime = tradeTime;
 		this.quantity = quantity;
@@ -81,10 +81,10 @@ public class Trade {
 	public void setQuantity(Long quantity) {
 		this.quantity = quantity;
 	}
-	public Long getPrice() {
+	public Double getPrice() {
 		return price;
 	}
-	public void setPrice(Long price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 	

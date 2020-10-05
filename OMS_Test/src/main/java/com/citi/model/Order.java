@@ -1,5 +1,7 @@
 package com.citi.model;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,6 +20,12 @@ import javax.persistence.Table;
 import com.citi.json.RandomDouble;
 import com.citi.json.RandomInt;
  
+/**
+ * 
+ * @author Indianrenters
+ * This is the Order class
+ *
+ */
 @Entity
 @Table(name ="orders")
 public class Order {
@@ -41,7 +49,7 @@ public class Order {
 	private String orderType;
 	
 	@Column(name="price")
-	private Long price;
+	private Double price;
 	
 	@Column(name="order_status", length = 255)
 	private String orderStatus;
@@ -64,7 +72,7 @@ public class Order {
 		super();
 	}
 
-	public Order(Long id, String buyOrSell, Date orderTime, Long quantity, String orderType, Long price,
+	public Order(Long id, String buyOrSell, Date orderTime, Long quantity, String orderType, Double price,
 			String orderStatus, Long allOrNone, Long minFill) {
 		this.id = id;
 		this.buyOrSell = buyOrSell;
@@ -117,12 +125,15 @@ public class Order {
 		this.orderType = orderType;
 	}
 
-	public Long getPrice() {
+	public Double getPrice() {
+		
 		return price;
 	}
 
-	public void setPrice(Long price) {
-		this.price = price;
+	public void setPrice(Double price) {
+		BigDecimal bd = new BigDecimal(price).setScale(2, RoundingMode.HALF_UP);
+        this.price = bd.doubleValue();
+		
 	}
 
 	public String getOrderStatus() {
@@ -179,9 +190,9 @@ public class Order {
 	}
 
 
-	public static long Price() throws InterruptedException {
-		double r = (Math.random() * (3458.9 - 2829.6)) + 2829.2;
-		return (long)r;
+	public static double Price() throws InterruptedException {
+		double r = (Math.random() * ((2685*1.1) - (2685*0.9))) + (2685*0.9);
+		return r;
 	
 	}
 	
@@ -225,8 +236,8 @@ public class Order {
 			 
 			 
 	         Calendar cal=Calendar.getInstance();
-	         String str_date1="2020-Jun-07 11:00:00";
-	         String str_date2="2020-Jun-07 12:00:00";
+	         String str_date1="2020-Oct-05 16:30:00";
+	         String str_date2="2020-Oct-05 17:30:00";
 	
 	         try {
 				cal.setTime(formatter.parse(str_date1));

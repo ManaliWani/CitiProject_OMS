@@ -2,6 +2,8 @@ package com.citi.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,12 @@ public class OrderServiceImpl implements OrderService{
 		orderRepository.deleteAll();
 		logger1.info("deleted data");
 	}
+
+	 @Override
+	 @Transactional
+	 public void truncateMyTable() {
+	        orderRepository.truncateMyTable();
+	    }
 
 
 

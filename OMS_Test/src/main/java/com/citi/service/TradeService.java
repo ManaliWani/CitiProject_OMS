@@ -10,4 +10,6 @@ public interface TradeService {
 	List<TradeJson> getAllTrades();
 
 	void clearTable();
+
+	void truncateMyTable();
 }
